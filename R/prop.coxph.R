@@ -28,11 +28,10 @@
     time <- Y[, "time"]; 
     status <- Y[, "status"]
   } else stop("Expected right-censored data.");
-##  X <- na.omit(model.matrix(model)[,-1,drop=FALSE]) ## Discard intercept
   X <- na.omit(model.matrix(model))
 
 
-  ot <- order(time); # order in time, status=1 first for ties
+  ot <- order(time);
   time <- time[ot]; status <- status[ot]
   X <- X[ot,,drop=FALSE]
   n <- length(time)
@@ -71,12 +70,8 @@ variable <- unique(variable)
 UsedData <- X[,na.omit(match(variable, colnames(X))),drop=FALSE]
 
 myvars <- variable
-## Martingale residuals only cumulated after variables with more than two levels
-##  myvars <- colnames(UsedData)[apply(UsedData,2,function(x) length(unique(x))>2)] ## Only consider variables with more than two levels
-##  if ("predicted"%in%variable) myvars <- c("predicted",myvars)
 myvars.idx <- 1:p
   
-  #hatW.MC <- function(x) {
     output <- .C("coxscoreW",
                  R=as.integer(R),
                  n=as.integer(n),
@@ -92,8 +87,6 @@ myvars.idx <- 1:p
                  index_censtimes_data=as.integer(index.censtimes-1),
                  X_data=as.double(X), # nxp
                  Mt_data=as.double(as.numeric(n)),
-                 #paridx=as.integer(x-1), nparidx=as.integer(1),
-                 #Type=as.integer(1), # 1=Score process
                  plotnum=as.integer(plots),
                  type_test_num=as.integer(type.test.num),
                  KS=as.double(numeric(p)),
@@ -103,12 +96,8 @@ myvars.idx <- 1:p
                  cvalues=as.double(numeric(p*R)),
                  Ws=as.double(numeric(p*m*plots)),
                  W=as.double(numeric(p*m)),
-                 WWW=as.double(0), ## Only for debugging
                  pkg="goftte"
     )
-    #return(output)
-  #}
-
 
 UsedVars <- W <- Wsd <- What <- KS <- CvM <- AS <- allcvalues <- x <- mytype <- c()
   mytype <- "prop"

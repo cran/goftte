@@ -97,9 +97,8 @@ extern "C" {
 		 double *Wsd,
 		 double *cvalues,
 		 double *Ws,
-		 double *W,
-		 double *WWW // Not used;
-		 ) {
+		 double *W
+    ) {
 
    Matrix<double, Col> X(*n, *p, X_data);
    Matrix<double, Col> X_sort(*n, *p, X_data_sort); 

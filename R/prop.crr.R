@@ -72,7 +72,6 @@
   for (j in 1:m.cov){
     if ((length(unique(cov1[,j]))<=2)|(is.numeric(cov1[,j])==TRUE)){
       m.mat=model.matrix(~cov1[,j])[,-1]
-      #m.mat=cov1[,j]
       X=cbind(X,m.mat)
       if (is.null(colnames(cov1)[j])==TRUE){
         new.names<-paste(c("X"),j)
@@ -84,7 +83,6 @@
     
     if ((length(unique(cov1[,j]))>2)&(is.numeric(cov1[,j])==FALSE)){
       m.mat.bis<-model.matrix(~cov1[,j])[,-1]
-      #m.mat.bis<-cov1[,j]
       levels<-levels(factor(cov1[,j]))[-1]
       if (is.null(colnames(cov1)[j])==TRUE){
       new.names<-paste(c("X"),j,levels)
@@ -112,7 +110,6 @@
     for (j in 1:m.cov){
       if ((length(unique(cov1))<=2)|(is.numeric(cov1)==TRUE)){
         m.mat=model.matrix(~cov1)[,-1]
-        #m.mat<-cov1
         X=cbind(X,m.mat)
         names<-c(names,paste(c("X"),j))}
         names<-gsub(" ","",names)
@@ -131,11 +128,7 @@
   fstatus=data$fstatus
   X=as.matrix(data[,3:((3+m.X)-1)])
   
-  #ftime=ftime[idx.na]
-  #fstatus=fstatus[idx.na]
-  
-  
-  ot <- order(ftime); # order in time, status=1 first for ties
+  ot <- order(ftime);
   time <- ftime[ot]; 
   
   status <- fstatus[ot]
@@ -188,9 +181,6 @@
   if(length(variable)!=p) stop("Variables names must have same length than number of variables in model")
   
   myvars <- variable
-  ## Martingale residuals only cumulated after variables with more than two levels
-  ##  myvars <- colnames(UsedData)[apply(UsedData,2,function(x) length(unique(x))>2)] ## Only consider variables with more than two levels
-  ##  if ("predicted"%in%variable) myvars <- c("predicted",myvars)
   myvars.idx <- 1:length(names)
   
     output <- .C("crrscoreW",
@@ -210,7 +200,6 @@
                  index_comptimes_data=as.integer(index.comptimes-1),
                  index_censtimes_data=as.integer(index.censtimes-1),
                  X_data=as.double(X), # nxp
-                 #beta_iid_data=as.double(beta.iid), # nxp
                  Mt_data=as.double(as.numeric(n)),
                  plotnum=as.integer(plots),
                  type_test_num=as.integer(type.test.num),
@@ -221,7 +210,6 @@
                  cvalues=as.double(numeric(p*R)),
                  Ws=as.double(numeric(p*m*plots)),
                  W=as.double(numeric(p*m)),
-                 WWW=as.double(0), ## Only for debugging
                  pkg="goftte"
     )
   

@@ -98,8 +98,7 @@ extern "C" {
 		 double *Wsd,
 		 double *cvalues,
 		 double *Ws,
-		 double *W,
-		 double *WWW
+		 double *W
 		 ) {
 
    Matrix<double, Col> X(*n, *p, X_data);

@@ -29,7 +29,7 @@
   \item{yu}{Upper simultaneous confidence limit.}
 }
 
-\details{This function is analog to confint.cumres from gof package.} 
+\details{This function is derived from confint.cumres of gof package.} 
        
 \examples{
 require(cmprsk)

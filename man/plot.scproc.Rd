@@ -49,7 +49,7 @@
   \item{...}{additional arguments.}
 }
 
-\details{This function is analog to plot.cumres from gof package.} 
+\details{This function is derived from plot.cumres of gof package.} 
 
 \examples{
 require(cmprsk)

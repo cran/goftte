@@ -16,7 +16,7 @@
   \item{...}{additional arguments.}
 }
 
-\details{This function is analog to print.cumres from gof package.} 
+\details{This function is derived from print.cumres of gof package.} 
 
 \examples{
 require(cmprsk)

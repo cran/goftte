@@ -28,7 +28,6 @@
     time <- Y[, "time"]; 
     status <- Y[, "status"]
   } else stop("Expected right-censored data.");
-  ##  X <- na.omit(model.matrix(model)[,-1,drop=FALSE]) ## Discard intercept
   X <- na.omit(model.matrix(model))
   
   
@@ -57,14 +56,9 @@
   if ((n>m)&(model$method!="breslow"))
     warning("In case of ties, use breslow method in coxph")
   
-  #Iinv <- model$naive.var
-  #beta.iid <- matrix(residuals(model,type="dfbeta"),ncol=p)[ot,,drop=FALSE]
-  ##  Mres <- Mt <- residuals(model, type="martingale")[ot]
-  ##  cox.schoen <- residuals(model,type="schoen")[,ot]
   beta <- coef(model)
   if(any(is.na(beta))) stop("Over-parametrized model")
   
-  ##  if (!is.na(match(response, variable))) variable[match(response, variable)] <- "predicted"
   if (is.null(variable)==FALSE){
     if (length(variable)!=p) stop("Variables names must have same length than number of variables in model")}
   
@@ -76,9 +70,7 @@
   UsedData <- X[,na.omit(match(variable, colnames(X))),drop=FALSE]
   
   myvars <- variable
-  ## Martingale residuals only cumulated after variables with more than two levels
-  ##  myvars <- colnames(UsedData)[apply(UsedData,2,function(x) length(unique(x))>2)] ## Only consider variables with more than two levels
-  ##  if ("predicted"%in%variable) myvars <- c("predicted",myvars)
+  
   myvars.idx <- 1:p
   
   #forme de la covariable
@@ -136,7 +128,6 @@
                  cvalues=as.double(numeric(p*R)),
                  Ws=as.double(numeric(p*max(l)*plots)),
                  W=as.double(numeric(p*max(l))),
-                 WWW=as.double(0), ## Only for debugging
                  pkg="goftte"
     )
   

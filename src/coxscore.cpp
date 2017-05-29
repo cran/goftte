@@ -93,9 +93,8 @@ extern "C" {
 		 double *Wsd,
 		 double *cvalues,
 		 double *Ws,
-		 double *W,
-		 double *WWW // Not used;
-		 ) {
+		 double *W
+) {
   
   Matrix<double, Col> X(*n, *p, X_data);
   const unsigned type=*type_test_num;

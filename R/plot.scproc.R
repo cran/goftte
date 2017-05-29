@@ -78,7 +78,6 @@ plot.scproc <- function(x, idx=1:length(x$variable),
     pband <- function() {
       ## Prediction bandds
       if ( (ci[1]!="none" && !is.null(ci) && ci[1]!=0) || (ci==TRUE) ) {
-        ##    if ((ci[1]!="none" && !is.null(ci))) {
         if (ci[1]=="pointwise")
           myCI <- predband(x,idx=i,cval=qnorm(1-(1-level)/2))
         else
@@ -96,7 +95,6 @@ plot.scproc <- function(x, idx=1:length(x$variable),
         tt <- c(t, rev(t))
         yy <- c(yu, rev(-yu))
         polygon(tt,yy, col=col.trans, lty=0)      
-        ##as.list(c(col2rgb("darkblue"),10)/255))),
       }
     }
     

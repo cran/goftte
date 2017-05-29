@@ -20,8 +20,7 @@ Our package can be viewed as an extension of the gof package (Holst, 2014) allow
 
 \deqn{CvM=\int_{0}^{\infty} U_k(\widehat{\beta},t)^2 dq(t)}    
 \deqn{AD=\int_{0}^{\infty} \frac{U_k(\widehat{\beta},t)^2}{q(t)(1-q(t))} dq(t)}
-Where \eqn{q(t)=\frac{I_{k,k}(\widehat{\beta},t)}{I_{k,k}(\widehat{\beta},\infty)}}, and \eqn{I(\widehat{\beta},t)} denotes the consistent sample estimate of the score process covariance matrix.  
- }
+Where \eqn{q(t)=\frac{I_{k,k}(\widehat{\beta},t)}{I_{k,k}(\widehat{\beta},\infty)}}, and \eqn{I(\widehat{\beta},t)} denotes the consistent sample estimate of the score process covariance matrix.}
  
 \author{
   Patrick Sfumato and Jean-Marie Boher}

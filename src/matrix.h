@@ -56,7 +56,6 @@
 #include <functional>
 #include <list>
 
-
 #ifdef SCYTHE_COMPILE_DIRECT
 #include "defs.h"
 #include "algorithm.h"
