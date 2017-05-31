@@ -1,6 +1,6 @@
 // STL
 #include <iostream>
-#include <algorithm> // random_shuffle, reverse, sort, ...
+#include <algorithm>
 #include <cmath>
 
 // SCYTHE
@@ -13,13 +13,14 @@
 #include "stat.h" 
 #include "smath.h" 
 // R interface
-#include <R.h>           // needed to use Rprintf()
-#include <R_ext/Utils.h> // needed to allow user interrupts
+#include <R.h>           
+#include <R_ext/Utils.h> 
 #include <Rdefines.h>
+#include <Rinternals.h>
+//
 #include "cumres.h"
 #include "extra.h"
-#include <omp.h>
-    
+
 using namespace scythe;
 using namespace std;
 
@@ -71,20 +72,19 @@ Matrix<double> Wscorerate_cox(const unsigned &k,
 }
 
 extern "C" {
-  void coxscoreW(const int *R, // Number of realizations
-		 const unsigned *n, // Number of individuals
+  void coxscoreW(const int *R,
+		 const unsigned *n,
      const unsigned *m,
-		 const unsigned *nd, // Number of interest events
-     const unsigned *nc, // Number of censory times
-		 const unsigned *p, // Number of  parameters
+		 const unsigned *nd,
+     const unsigned *nc,
+		 const unsigned *p,
      const unsigned long *seed,
-		 const double *beta_data,  // nxp, parameter vector
-		 const double *time_data, // 
+		 const double *beta_data,
+		 const double *time_data,
      const unsigned *index_otime_data,
-		 const unsigned *index_dtimes_data, // interest events times
-     const unsigned *index_censtimes_data, // censory times
-		 const double *X_data,  // nxp, Design matrix
-		 const double *Mt_data, // Martingale residuals
+		 const unsigned *index_dtimes_data,
+     const unsigned *index_censtimes_data,
+		 const double *X_data,
 		 const unsigned *plotnum,
      const unsigned *type_test_num, 
 		 double *KS,
@@ -323,4 +323,4 @@ extern "C" {
     }
 	}
   
-} // extern "C"
+}

@@ -85,8 +85,7 @@ myvars.idx <- 1:p
                  index_otime_data=as.integer(index.otime-1),
                  index_dtimes_data=as.integer(index.dtimes-1),
                  index_censtimes_data=as.integer(index.censtimes-1),
-                 X_data=as.double(X), # nxp
-                 Mt_data=as.double(as.numeric(n)),
+                 X_data=as.double(X),
                  plotnum=as.integer(plots),
                  type_test_num=as.integer(type.test.num),
                  KS=as.double(numeric(p)),

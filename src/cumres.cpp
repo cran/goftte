@@ -1,6 +1,6 @@
 // STL
 #include <iostream>
-#include <algorithm> // random_shuffle, reverse, sort, ...
+#include <algorithm> 
 #include <cmath>
 // SCYTHE
 #include "matrix.h" 
@@ -12,8 +12,8 @@
 #include "stat.h" 
 #include "smath.h" 
 // R interface
-#include <R.h>           //  Rprintf()
-#include <R_ext/Utils.h> //  user interrupts
+#include <R.h>           
+#include <R_ext/Utils.h> 
 #include <Rdefines.h>
 #include <Rinternals.h>
 // 
@@ -30,7 +30,7 @@ using namespace scythe;
 using namespace std;
 
 double KolmogorovSmirnov(const scythe::Matrix<double> &W) {
-  return(scythe::max(scythe::fabs(W))); // sup |W(x)|
+  return(scythe::max(scythe::fabs(W)));
 
 }
 
@@ -49,7 +49,7 @@ double CramerVonMises (const scythe::Matrix<double> &W, const scythe::Matrix<dou
     Itd1 = It(i+1,_); Itd1.resize(p,p);
     CvM[i] = W[i]*W[i]*((Itd1(var,var)-Itd(var,var)));
     
-  } // OBS: last element in delta is zero
+  } 
   
   return(scythe::sum(CvM)); 
 }
@@ -81,7 +81,7 @@ double AndersonDarling (const scythe::Matrix<double> &W, const scythe::Matrix<do
     ASprep[N] = W[i]*W[i]*((Itd1(var,var)-Itd(var,var))/(Itd(var,var)*(1-Itd(var,var)/Itdi(var,var))));
     N=N+1;
     }
-  } // OBS: last element in delta is zero
+  }
   
   return(scythe::sum(ASprep)); 
 }

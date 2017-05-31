@@ -116,11 +116,10 @@
                  index_otime_data=as.integer(index.otime-1),
                  index_dtimes_data=as.integer(index.dtimes-1),
                  index_censtimes_data=as.integer(index.censtimes-1),
-                 X_data=as.double(X), # nxp
+                 X_data=as.double(X),
                  seed=seed,
                  index_ox_data=as.integer(index.oX-1),
                  X_data_sort=as.double(X.sort),
-                 Mt_data=as.double(as.numeric(n)),
                  plotnum=as.integer(plots),
                  type_test_num=as.integer(type.test.num),
                  KS=as.double(numeric(p)),

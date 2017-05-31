@@ -1,6 +1,6 @@
 // STL
 #include <iostream>
-#include <algorithm> // random_shuffle, reverse, sort, ...
+#include <algorithm> 
 #include <cmath>
 
 // SCYTHE
@@ -13,10 +13,11 @@
 #include "stat.h" 
 #include "smath.h" 
 // R interface
-#include <R.h>           // needed to use Rprintf()
-#include <R_ext/Utils.h> // needed to allow user interrupts
+#include <R.h>           
+#include <R_ext/Utils.h> 
 #include <Rdefines.h>
 #include <Rinternals.h>
+//
 #include "cumres.h"
 #include "extra.h"
 
@@ -67,23 +68,22 @@ Matrix<double> Whatfcov_cox(const unsigned &k,
 }
 
 extern "C" {
-  void Wfcov(const int *R, // Number of realizations
-  	 const unsigned *n, // Number of individuals
+  void Wfcov(const int *R,
+  	 const unsigned *n,
      const unsigned *m,
-		 const unsigned *nd, // Number of interest events
-     const unsigned *nc, // Number of censory times
-		 const unsigned *p, // Number of  parameters
+		 const unsigned *nd,
+     const unsigned *nc,
+		 const unsigned *p,
      const unsigned *l_data,
-		 const double *beta_data,  // nxp, parameter vector
-		 const double *time_data, // 
+		 const double *beta_data,
+		 const double *time_data,
      const unsigned *index_otime_data,
-		 const unsigned *index_dtimes_data, // interest events times
-     const unsigned *index_censtimes_data, // censory times
-		 const double *X_data,  // nxp, Design matrix
+		 const unsigned *index_dtimes_data,
+     const unsigned *index_censtimes_data,
+		 const double *X_data,
      const unsigned long *seed,
      const unsigned *index_ox_data,
      const double *X_data_sort,
-		 const double *Mt_data, // Martingale residuals
 		 const unsigned *plotnum,
      const unsigned *type_test_num,
 		 double *KS,
@@ -183,7 +183,7 @@ extern "C" {
   }
  
   Matrix<double> Itprep = multCol(S_2, t(1/S_0)); 
-  Itprep = Itprep-E_2; // Martinussen & Scheike p. 184
+  Itprep = Itprep-E_2;
   Matrix<double>It=multCol(Itprep,t(dN));
   It=cumsum(It);  
   Matrix<double> Itau = It(*m-1,_); Itau.resize(*p,*p);
