@@ -337,7 +337,9 @@ extern "C" {
     Matrix<double> qziprep(*n,*m);
     Matrix<double> qz(*m,l[k]);
     for (unsigned c=0; c<l[k]; c++){
+      #ifdef _OPENMP
       #pragma omp parallel for
+      #endif
       for (unsigned i=0; i<*n; i++){
         qziprep(i,*m-1)=(Iz(i,c)-g(*m-1,c))*dMi(i,*m-1)*Ius(i,*m-1);
         for (unsigned j=1; j<*m; j++){

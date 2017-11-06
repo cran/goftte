@@ -1,17 +1,10 @@
-desc <- packageDescription("goftte")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc["Date"])
-vers <- paste("R package version", desc["Version"])
-title <- paste(desc["Package"], ": ", desc["Title"], sep="")
-author <- desc["Author"]
-plist <- personList(as.person(author))
-textver <- paste(author, " (", year, "). ", title, ". ", vers, ".", sep="")
-
 citHeader("To cite 'goftte' in publications use:")
 
-citEntry(entry="Manual",
-         title = title,
-         author = plist,
-         year = year,
-         note = vers,
-         
-         textVersion = textver)
+citEntry(entry = "Manual",
+         title = "goftte: Goodness-of-Fit for Time-to-Event Data",
+         author = "Patrick Sfumato, Jean-Marie Boher",
+         year = "2017",
+         url = "https://CRAN.R-project.org/package=goftte",
+         note = "R package version 1.0.4",
+         textVersion = "Patrick Sfumato and Jean-Marie Boher. (2017). goftte: Goodness-of-Fit for Time-to-Event Data. R package version 1.0.4, https://CRAN.R-project.org/package=goftte.")
+

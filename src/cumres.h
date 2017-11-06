@@ -2,7 +2,9 @@
 #define CUMRES_H
 
 #include <cmath>
+#ifdef _OPENMP
 #include <omp.h>
+#endif
 #include "matrix.h" 
 
 

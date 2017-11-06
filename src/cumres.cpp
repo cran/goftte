@@ -19,8 +19,10 @@
 // 
 #include "extra.h"
 #include "cumres.h"
-#include <omp.h>
 
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 extern const double SDtol = 1e-9;
 //*************************************************
@@ -91,9 +93,13 @@ scythe::Matrix<double> ProdMat(const scythe::Matrix<double> &A,
                                  
 Matrix<double> C(A.rows(), B.cols());
 unsigned i,j,k;
+
+#ifdef _OPENMP
 #pragma omp parallel shared(A,B,C) private(i,j,k)
 {
 #pragma omp for schedule(static)
+#endif
+
   for (i=0; i<A.rows(); i++)
   {
     for (j = 0; j < B.cols(); j++)
@@ -104,7 +110,10 @@ unsigned i,j,k;
         }
     }
   }
+#ifdef _OPENMP
 }
+#endif
+
 return(C);
 }
 

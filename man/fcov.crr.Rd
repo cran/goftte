@@ -77,7 +77,7 @@ fcov(model=fit.crr, ftime=ftime,fstatus=fstatus,cov1=cov)
        }
        
 \references{
- Li J, Scheike TH and Zhang MJ (2015). "Checking Fine & Gray subditribution hazards model with cumulative sums of residuals." Lifetime Data Analysis, 21(2), 197-217.
+ Li J, Scheike TH and Zhang MJ (2015). \emph{Checking Fine & Gray subditribution hazards model with cumulative sums of residuals.} Lifetime Data Analysis, 21(2), 197-217.
  
  Lin DY, Wei JL and Ying Z (1993).\emph{Checking the Cox model with cumulative sums of martingale-based residuals.} Biometrika, 80(3), 557-572.
 
