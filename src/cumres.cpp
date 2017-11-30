@@ -38,7 +38,7 @@ double KolmogorovSmirnov(const scythe::Matrix<double> &W) {
 
 double CramerVonMises (const scythe::Matrix<double> &W, const scythe::Matrix<double> &It, unsigned var) {
   unsigned n = It.rows();
-  unsigned p2 = It.cols();
+  double p2 = It.cols();
   unsigned p=sqrt(p2);
   
   Matrix<double> Itd(1,p2);
@@ -58,7 +58,7 @@ double CramerVonMises (const scythe::Matrix<double> &W, const scythe::Matrix<dou
 
 double AndersonDarling (const scythe::Matrix<double> &W, const scythe::Matrix<double> &It, unsigned var) {
   unsigned n = It.rows();
-  unsigned p2 = It.cols();
+  double p2 = It.cols();
   unsigned p=sqrt(p2);
   
   Matrix<double> Itdi = It(n-1,_); Itdi.resize(p,p);

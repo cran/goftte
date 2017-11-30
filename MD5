@@ -1,4 +1,4 @@
-7d2fb3fb2f31c6bfcd8a56f68bf9903f *DESCRIPTION
+bef3695dd36b52826f350e3bece4dd0d *DESCRIPTION
 1a0f56638b97289e40bbde83fa728012 *NAMESPACE
 42c9e388465121121eba95091eb5c724 *R/fcov.coxph.R
 53eae3ccc5de28dcd997fcd9ac88acf3 *R/fcov.cph.R
@@ -10,7 +10,7 @@ d0f6cf65d6695a83bac3ba7bdc6856a0 *R/plot.scproc.R
 0d39f3b633f5743c1aae133355b9354b *R/prop.coxph.R
 b8486590f6d3b05368a592227833e920 *R/prop.cph.R
 de09df66c899f8213fbd7b02f9361cf7 *R/prop.crr.R
-a07a027431b166538bdab14e3467641c *inst/CITATION
+386f88f864ef0a8aa323247537653978 *inst/CITATION
 dbfba5f76868daf4559d9f7cd74e53c3 *man/fcov.coxph.Rd
 73a5bc591c90beacf708b12cc715e31b *man/fcov.crr.Rd
 38e5a04dd5dd56dc8955ca48cbe66d28 *man/goftte-package.Rd
@@ -19,12 +19,12 @@ cce3d0b1a9e010ace0e7decbc789dd74 *man/plot.scproc.Rd
 190c5daeee805256a3660ce2f6517c26 *man/print.scproc.Rd
 5f4795f87c61ae346a364e372e46a5df *man/prop.coxph.Rd
 02a602639bc032d04d4b6159f067c65a *man/prop.crr.Rd
-b548326444726de5f8897bb85001aa3f *src/Makevars
+7eb166342a02a0ae0f9a6141f7428e3f *src/Makevars
 574d52a3b718ef1892f76d1ed15ba7a0 *src/Makevars.win
 5362ed41a42ce34cf7817f6bfd988935 *src/algorithm.h
 ee07ca016f068a8365c32889e6336893 *src/coxscore.cpp
 baa1f6a794af481c97cf3735df08b39a *src/crrscore.cpp
-22efd0ca7c6d875b4446387421fff47e *src/cumres.cpp
+74ebb31f67cda344c7ced028e4c679e4 *src/cumres.cpp
 97752469116bc256c03691d6a39ed8fb *src/cumres.h
 80eab6b8072ae34de6c192af41324093 *src/datablock.h
 bde5ac7187d8cb71d863b02540bdc7c7 *src/defs.h

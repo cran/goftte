@@ -5,6 +5,6 @@ citEntry(entry = "Manual",
          author = "Patrick Sfumato, Jean-Marie Boher",
          year = "2017",
          url = "https://CRAN.R-project.org/package=goftte",
-         note = "R package version 1.0.4",
-         textVersion = "Patrick Sfumato and Jean-Marie Boher. (2017). goftte: Goodness-of-Fit for Time-to-Event Data. R package version 1.0.4, https://CRAN.R-project.org/package=goftte.")
+         note = "R package version 1.0.5",
+         textVersion = "Patrick Sfumato and Jean-Marie Boher. (2017). goftte: Goodness-of-Fit for Time-to-Event Data. R package version 1.0.5, https://CRAN.R-project.org/package=goftte.")
 
